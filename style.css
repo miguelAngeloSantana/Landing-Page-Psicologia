@@ -25,9 +25,9 @@ body {
 }
 
 header {
-    height: 90px;
+    margin-top: 0;
     margin-bottom: 14px;
-    background-color: var(--section-color-white);
+    background-color: var(--section-color-blue);
 }
 
 .conteiner {
@@ -37,16 +37,21 @@ header {
     padding: 0 20px;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu .logo img {
+    width: 80px;
+    height: auto;
+    margin-top: 12px;
+}
+
 .menu .menu-main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.menu .menu-main .logo img {
-    width: 80px;
-    height: auto;
-    margin-top: 12px;
 }
 
 .menu .menu-main ul {
@@ -59,20 +64,60 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--colors-paragraph);
+    color: var(--colors-clear--paragraph);
 }
 
 .menu #hamburguer {
     display: none;
 }
 
+#welcome {
+    margin: 30px 0;
+}
+
+#welcome .welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-section .img-section {
+    width: 500px;
+}
+
+.welcome-section .img-section img {
+    width: 450px;
+}
+
+.welcome-section .text-section {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.welcome-section .text-section h1, p {
+    margin-bottom: 20px;
+    padding: 0 25px;
+}
+
+.welcome-section .text-section .btn {
+    background-color: var(--background-botton-form);
+    border: none;
+    border-radius: 25px;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+.welcome-section .text-section .btn a {
+    color: var(--section-color-white);
+    text-decoration: none;
+}
 
 #About {
     background-color: var(--section-color-blue);
     color: var(--colors-clear--paragraph);
 }
 
-#About h1 {
+#About h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 10px;
@@ -270,7 +315,7 @@ header {
 }
 
 .section-form .section-form--formulario form .btn {
-    width: 100%;
+    width: 30%;
     padding: 20px 0;
     border-radius: 50px;
     border: 0;
@@ -309,11 +354,53 @@ header {
     }
 
     .menu #hamburguer  {
-        display: block;
+        display: flex;
+        cursor: pointer;
+
+    }
+
+    .menu #hamburguer .icon-close {
+        display: none;
     }
 
     .menu #hamburguer .icon-open {
+        display: block;
+    }
+
+    .menu #hamburguer.show .icon-close {
+        display: block;
+    }
+
+    .menu #hamburguer.show .icon-open {
         display: none;
+    }
+
+    .conteiner .menu .menu-main.show {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        background-color: rgba(0, 0, 0, .8);
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        right: 0;
+        height: 60vh;
+        width: 30%;
+    } 
+
+    .conteiner .menu .menu-main.show ul {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .welcome-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-section .img-section {
+        margin-bottom: 20px;
+        width: 430px;
     }
 
     .section-sobre {
@@ -375,7 +462,35 @@ header {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .conteiner .menu .menu-main.show {
+        height: 48vh;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .conteiner .menu .menu-main.show {
+        width: 40%;
+    }
+
+    .welcome-section .text-section h1 {
+        font-size: 1.3rem;
+    }
+
+    .welcome-section .text-section p {
+        font-size: 0.95rem;
+    }
+
+    .welcome-section .img-section img {
+        width: 100%;
+    }
+}
+
 @media (max-width: 540px) {
+    .welcome-section .text-section {
+        text-align: center;
+    }
+
     .section-service .servico-list--side {
         flex-direction: column;
         align-items: center;
@@ -385,7 +500,6 @@ header {
     .section-service .servico-list--side .servico-list--side-itens {
         width: 90vw;
     }
-
 
     #Vantagens {
         padding-top: 20px;
@@ -417,7 +531,14 @@ header {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 500px) {  
+    .conteiner .menu .menu-main.show {
+        width: 45%;
+    }  
+    .welcome-section .img-section {
+        width: 300px;
+    }
+    
     .section-sobre .desc-side p {
         font-size: 0.86rem;
         margin: 0 0 30px 0;
@@ -450,8 +571,4 @@ header {
    .section-vantagem .section-vantagem--item {
        width: 100%;
    }
-}
-
-@media (max-width:390px) {
-    
 }
