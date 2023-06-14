@@ -170,19 +170,32 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.7478828364965!2d-43.16976062539967!3d-22.513640523937422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99a7a21c145c11%3A0x2c02a67fe658bc36!2sCl%C3%ADnica%20Infinitamente!5e0!3m2!1spt-BR!2sbr!4v1683118855240!5m2!1spt-BR!2sbr" width="50%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="section-form--formulario">
-                    <form>
-                        <label for="nome">Nome: </label>
-                        <input type="text" name="nome" id="txtname" class="form-control" placeholder="Insira seu nome completo..." required>
+                    <form method="post" id="formulario">
+                        <div class="input-form">
+                            <label for="nome">Nome: </label>
+                            <input type="text" name="nome" id="txtname" class="form-control" placeholder="Insira seu nome completo..." required>
+                            <span class="error"></span>
+                        </div>
                         <br />
-                        <label for="email">Email: </label>
-                        <input type="email" name="email" id="txtemail" class="form-control" placeholder="Insira seu email completo..." required>
+                        <div class="input-form">
+                            <label for="email">Email: </label>
+                            <input type="email" name="email" id="txtemail" class="form-control" placeholder="Insira seu email completo..." required>
+                            <span class="error"></span>
+                        </div>
                         <br />
-                        <label for="tel">Telefone: </label>
-                        <input type="number" name="tel" id="txttel" class="form-control" placeholder="Insira um telefone para contato..." required>
+                        <div class="input-form">
+                            <label for="tel">Telefone: </label>
+                            <input type="tel" name="tel" id="txttel" class="form-control" placeholder="Insira um telefone para contato..." required>
+                            <span class="error"></span>
+                        </div>
+                        <br />
+                        <div class="input-form">
+                            <label for="msg">Mensagem (Opcional)</label>
+                            <textarea name="msg" id="msg" cols="30" rows="8" placeholder="Caso ache necessário, escreva um pouco sobre sua situaçao para conversarmos sobre ela nas sesoes"></textarea>
+                        </div>
                         <br />
                         <div class="btn-form">
-                            <input type="submit" value="Enviar" class="btn">
-                        </div>
+                            <input type="submit" value="Enviar" class="btn">                        </div>
                     </form>
                 </div>
             </div>

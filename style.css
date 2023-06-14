@@ -95,11 +95,6 @@ header {
    align-items: center;
 }
 
-.welcome-section .text-section h1, p {
-    margin-bottom: 20px;
-    padding: 0 25px;
-}
-
 .welcome-section .text-section .btn {
     background-color: var(--background-botton-form);
     border: none;
@@ -284,37 +279,63 @@ header {
     width: 100%;
 }
 
-.section-form .section-form--formulario form {
+.section-form .section-form--formulario #formulario {
     display: flex;
     flex-direction: column;
     height: auto;
     padding: 22px;
 }
 
-.section-form .section-form--formulario form label {
+.section-form .section-form--formulario #formulario .input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-form .section-form--formulario #formulario .input-form.error .form-control{
+    border: 2px solid red;
+    background-color: #fff;
+}
+
+.section-form .section-form--formulario #formulario .input-form.sucesso .form-control{
+    border: 2px solid #000;
+    background-color: #fff;
+}
+
+.section-form .section-form--formulario #formulario .input-form.error span {
+    display: block;
+    color: red;
+    margin-top: 0.6rem;
+    font-size: 0.97rem;
+}
+
+.section-form .section-form--formulario #formulario .input-form label {
     font-size: 1.1rem;
     margin-bottom: 4px;
 }
 
-.section-form .section-form--formulario form .form-control {
+.section-form .section-form--formulario #formulario .input-form .form-control {
     display: block;
     height: 2rem;
     width: 100%;
-    padding: 12px 0;
+    padding: 12px;
     outline: none;
 }
 
-.section-form .section-form--formulario form .input-box {
-    margin: 10px 8px 15px  0;
-    min-height: 0.9rem;
-    min-width: 0.9rem;
+.section-form .section-form--formulario #formulario .input-form span {
+    display: none;
 }
 
-.section-form .section-form--formulario form .btn-form {
+
+
+.section-form .section-form--formulario #formulario .input-form  textarea {
+    padding: 3px 0 0 7px;
+}
+
+.section-form .section-form--formulario #formulario .btn-form {
     text-align: center;
 }
 
-.section-form .section-form--formulario form .btn {
+.section-form .section-form--formulario #formulario .btn-form .btn {
     width: 30%;
     padding: 20px 0;
     border-radius: 50px;
