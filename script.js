@@ -29,19 +29,27 @@ form.addEventListener("input", function(c){
     }
 });
 
-form.addEventListener("submit", function(event){
+form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const resultCheckName = checkName();
-    const resultCheckEmail = checkEmail();
-    const resultCheckTel = checkTel();
+    let resultCheckName = checkName();
+    let resultCheckEmail = checkEmail();
+    let resultCheckTel = checkTel();
 
     const isValid = resultCheckName && resultCheckEmail && resultCheckTel;
     
-    if(isValid) {
-       
-    };
-    
+    if (isValid) {
+        let xhttp = new XMLHttpRequest();
+        xhttp.open('POST', 'config.php', true);
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200) {
+                let res = xhttp.response;
+                console.log(res);
+            }
+        }
+        let formData = new FormData(form);
+        xhttp.send(formData);
+    }
 });
 
 
@@ -52,7 +60,7 @@ const checkName = () => {
     if (userName === "") {
         formError(nameForm, "Por favor, escreva seu nome antes e enviar");
     } else if (userName.length < 3) {
-        formError(nameForm, "Escreva um nome que tenha entre 3 e 25 letras");
+        formError(nameForm, "Nome digitado invalido");
     } else {
         formSucesso(nameForm);
         valid = true;
