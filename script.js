@@ -39,16 +39,16 @@ form.addEventListener("submit", (event) => {
     const isValid = resultCheckName && resultCheckEmail && resultCheckTel;
     
     if (isValid) {
-        let xhttp = new XMLHttpRequest();
-        xhttp.open('POST', 'config.php', true);
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200) {
-                let res = xhttp.response;
+        let xhttp = new XMLHttpRequest(); //É criaod um novo objeto XMLHttpRequest para fazer a requisição
+        xhttp.open('POST', 'config.php', true); //Abrimos uma conexão com o servidor e enviamos a requisição POST para o arquivos config.php
+        xhttp.onreadystatechange = function(){ // Quando a requisição sofre alguma alteração, uma função será disprada
+            if(this.readyState == 4 && this.status == 200) { // se o ready status da requisição do ajax for 4, a requisição foi finalizada e se o estado da requisição for 200, ela foi realizado com sucesso 
+                let res = xhttp.response; // Guardada a resposta do ajax em uma variavel
                 console.log(res);
             }
         }
-        let formData = new FormData(form);
-        xhttp.send(formData);
+        let formData = new FormData(form); // É criado um novo objeto FormDara, onde será usado para enviar os dados
+        xhttp.send(formData); // Os dados são enviados
     }
 });
 

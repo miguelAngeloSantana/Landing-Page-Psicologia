@@ -6,6 +6,7 @@
 
     --background-botton-form: #6169ED;
     --color-botton-form: #000;
+    --form-error: #DC143C;
 }
 
 
@@ -24,7 +25,6 @@ a {
 }
 
 .btn {
-    background-color: var(--background-botton-form);
     border: none;
     border-radius: 25px;
     padding: 15px 20px;
@@ -113,10 +113,6 @@ header {
 
 .welcome-section .text-section .btn {
     background-color: var(--background-botton-form);
-    border: none;
-    border-radius: 25px;
-    padding: 15px 20px;
-    cursor: pointer;
 }
 .welcome-section .text-section .btn a {
     color: var(--section-color-white);
@@ -151,6 +147,14 @@ header {
 .section-sobre .desc-side p {
     font-size: 17px;
     line-height: 24px;
+}
+
+.section-sobre .desc-side .btn-about {
+    background-color: var(--section-color-white);
+}
+
+.section-sobre .desc-side .btn-about a {
+    color: var(--color-botton-form);
 }
 
 .section-sobre .img-side {
@@ -308,18 +312,18 @@ header {
 }
 
 .section-form .section-form--formulario #formulario .input-form.error .form-control{
-    border: 2px solid red;
-    background-color: #fff;
+    border: 2px solid var(--form-error);
+    background-color: var(--section-color-white);
 }
 
 .section-form .section-form--formulario #formulario .input-form.sucesso .form-control{
-    border: 2px solid #000;
-    background-color: #fff;
+    border: 2px solid var(--color-botton-form);
+    background-color: var(--section-color-white);
 }
 
 .section-form .section-form--formulario #formulario .input-form.error span {
     display: block;
-    color: red;
+    color: var(--form-error);
     margin-top: 0.6rem;
     font-size: 0.97rem;
 }
@@ -362,7 +366,7 @@ header {
     cursor: pointer;
     margin-top: 20px;
     background-color: var(--background-botton-form);
-    color: var(--color-botton-form);
+    color: var(--section-color-white);
 }
 
 footer {
@@ -475,8 +479,6 @@ footer {
     .welcome-section .text-section {
         margin-left: 25px;
     }
-
-
 
     .conteiner-footer {
         flex-direction: column-reverse;
@@ -623,10 +625,6 @@ footer {
         height: 48vh;
     }
 
-    /* .conteiner-footer .contato {
-        width: 50%;
-    } */
-
     .conteiner-footer .contato .contato-text p {
         font-size: 0.9rem;
     }
@@ -655,6 +653,10 @@ footer {
 
     .welcome-section .img-section img {
         width: 100%;
+    }
+
+    .section-form .section-form--formulario #formulario .btn-form .btn {
+        width: 50%;
     }
 }
 
@@ -753,6 +755,10 @@ footer {
 
    .section-vantagem .section-vantagem--item {
        width: 100%;
+   }
+
+   .section-form .section-form--formulario #formulario .btn-form .btn {
+        width: 80%;
    }
 
    .conteiner-footer .links-sections .nav-footer .nav-footer--one ul li, .conteiner-footer .links-sections .nav-footer .nav-footer--two ul li {
